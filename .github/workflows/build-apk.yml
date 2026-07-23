@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
 
@@ -21,6 +21,10 @@ jobs:
         uses: gradle/actions-setup-gradle@v4
         with:
           gradle-version: 8.6
+          cache-disabled: true
+
+      - name: Check files
+        run: ls -la && cat app/build.gradle.kts && cat app/src/main/AndroidManifest.xml
 
       - name: Build Debug APK
         run: gradle :app:assembleDebug --no-daemon --stacktrace
@@ -30,3 +34,4 @@ jobs:
         with:
           name: GalaxyAuto-APK
           path: app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: warn
