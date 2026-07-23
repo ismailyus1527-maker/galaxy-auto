@@ -1,0 +1,26 @@
+version: 2.1
+
+orbs:
+  android:
+    differentWorkflow: android-build
+    builder:
+      name: android-build
+      executor:
+        tag: 2025.01.1
+workflows:
+  build:
+    jobs:
+      - build-apk
+jobs:
+  build-apk:
+    executor:
+      name: android/android-build
+      tag: 2025.01.1
+    steps:
+      - checkout
+      - run:
+          name: Assemble Debug APK
+          command: ./gradlew assembleDebug
+      - store_artifacts:
+          path: app/build/outputs/apk/debug/
+          destination: apks
