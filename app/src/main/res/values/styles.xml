@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.GalaxyAuto" parent="Android.Theme.Material.Light.NoActionBar">
+        <item name="android:colorPrimary">#4DA6FF</item>
+    </style>
+</resources>
