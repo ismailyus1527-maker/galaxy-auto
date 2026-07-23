@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<automotiveApp>
+    <uses>
+        <navigation>
+            <supportedTemplates>
+                <template>TemplateALL/ItemList</template>
+                <template>TemplateALL/GridTemplate</template>
+            </supportedTemplates>
+        </navigation>
+    </uses>
+</automotiveApp>
